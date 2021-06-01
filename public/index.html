@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Parallax Scrolling</title>
+   
+</head>
+<body>
+    <audio id="divAudio">
+        <source src="talking to the moon.mp3" type="audio/mp3">
+     </audio>
+     <script>
+        var vAudio = document.getElementById("divAudio");
+        function playMusic()
+        {
+            console.log('hi');
+           vAudio.play();
+        }
+     </script>
+        <header>
+            <a href="#" class='logo' onclick="playMusic()">Ambience</a>
+            <ul>
+                <li><a href="#" class='active'>Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Work</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </header>
+        <section>
+        <img src = 'stars.png' id = 'stars'>
+        <img src = 'moon.png' id = 'moon' >    
+        <img src = 'mountains_behind.png' id = 'mountains_behind'>  
+        <h2 id = 'text'>Talking to the moon</h2>
+        <img src = 'mountains_front.png' id = 'mountains_front'>  
+        </section>
+        <div class="sec">
+            <h2>Some Facts</h2>
+            <p>
+                The Moon is Earth's only natural satellite. At about one-quarter the diameter of Earth (comparable to the width of Australia), 
+                it is the largest natural satellite in the Solar System relative to the size of its planet,[f] the fifth largest satellite in the Solar System overall,
+                and is larger than any dwarf planet. Orbiting Earth at an average distance of 384,400 km (238,900 mi), or about 30 times Earth's diameter,
+                its gravitational influence slightly lengthens Earth's day and is the main driver of Earth's tides. The Moon is classified as a planetary-mass object and a differentiated rocky body,
+                and lacks any significant atmosphere, hydrosphere, or magnetic field. Its surface gravity is about one-sixth of Earth's (0.1654 g);
+                Jupiter's moon Io is the only satellite in the Solar System known to have a higher surface gravity and density.<br><br>
+
+                The Moon's orbit around Earth has a sidereal period of 27.3 days. During each synodic period of 29.5 days, the amount of visible surface illuminated by the Sun varies from none up to 100%,
+                resulting in lunar phases that form the basis for the months of a lunar calendar. The Moon is tidally locked to Earth, which means that the length of a full rotation of the Moon on its own
+                axis causes its same side (the near side) to always face Earth, and the somewhat longer lunar day is the same as the synodic period. That said, 59% of the total lunar surface can be seen from
+                Earth through shifts in perspective due to libration.<br><br>
+
+                The most widely accepted origin explanation posits that the Moon formed about 4.51 billion years ago, not long after Earth, out of the debris from a giant impact between the planet
+                and a hypothesized Mars-sized body called Theia. It then receded to a wider orbit because of tidal interaction with the Earth. The near side of the Moon is marked by dark volcanic maria ("seas"),
+                which fill the spaces between bright ancient crustal highlands and prominent impact craters. Most of the large impact basins and mare surfaces were in place by the end of the Imbrian period,
+                some three billion years ago. The lunar surface is relatively non-reflective, with a reflectance just slightly brighter than that of worn asphalt. However, because it has a large angular diameter,
+                the full moon is the brightest celestial object in the night sky. The Moon's apparent size is nearly the same as that of the Sun, allowing it to cover the Sun almost completely during a total solar eclipse.
+            </p>
+        </div>
+        <script>
+            let stars = document.getElementById('stars');
+            let moon = document.getElementById('moon');
+            let mountains_behind = document.getElementById('mountains_behind');
+            let mountains_front = document.getElementById('mountains_front');
+            let text = document.getElementById('text');
+            let header = document.querySelector('header');
+
+            window.addEventListener('scroll', function(){
+                let value = window.scrollY;
+                stars.style.left  = value*1.05 + 'px';
+                moon.style.top  = value*0.5 + 'px';
+                mountains_behind.style.top  = value*0.5 + 'px';
+                mountains_front.style.top  = value*0 + 'px';
+                text.style.marginRight = value*4 + 'px';
+                text.style.marginTop = value*1.05 + 'px';
+                header.style.top  = value*0.5 + 'px';
+
+
+            })
+
+        </script>
+</body>
+</html>
